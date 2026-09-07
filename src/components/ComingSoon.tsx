@@ -26,15 +26,15 @@ export function ComingSoon() {
         textAlign: "center",
       }}
     >
-      {/* Logo — white variant for dark background, larger, explicitly centered via flex wrapper. */}
+      {/* FindRE mark — gold house-with-magnifier symbol, transparent PNG. Aspect ratio 1406:1625 preserved. */}
       <div style={{ marginBottom: 40, display: "flex", justifyContent: "center", width: "100%" }}>
         <Image
-          src="/brand/logo-white.svg"
+          src="/brand/comingsoon-mark.png"
           alt="FindRE"
-          width={260}
-          height={100}
+          width={1406}
+          height={1625}
           priority
-          style={{ height: "auto", width: "auto", maxWidth: 260, display: "block" }}
+          style={{ width: 140, height: "auto", display: "block" }}
         />
       </div>
 
