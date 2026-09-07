@@ -26,15 +26,15 @@ export function ComingSoon() {
         textAlign: "center",
       }}
     >
-      {/* Logo — wrapped in a flex container so it's explicitly centered regardless of the SVG's own alignment. */}
-      <div style={{ marginBottom: 32, display: "flex", justifyContent: "center", width: "100%" }}>
+      {/* Logo — white variant for dark background, larger, explicitly centered via flex wrapper. */}
+      <div style={{ marginBottom: 40, display: "flex", justifyContent: "center", width: "100%" }}>
         <Image
-          src="/brand/logo-primary.svg"
+          src="/brand/logo-white.svg"
           alt="FindRE"
-          width={180}
-          height={72}
+          width={260}
+          height={100}
           priority
-          style={{ height: "auto", display: "block", filter: "brightness(1.05)" }}
+          style={{ height: "auto", width: "auto", maxWidth: 260, display: "block" }}
         />
       </div>
 
