@@ -1,12 +1,8 @@
+// Coming Soon mode — the full home page (Hero / ValueProps / FeaturedProperties / …) is
+// intentionally disabled while the site is still under construction. All those components
+// still exist in the repo. To relaunch, revert the commit that added the ComingSoon wiring.
 import { setRequestLocale } from "next-intl/server";
-
-export const revalidate = 60;
-import { Hero } from "@/components/home/Hero";
-import { ValueProps } from "@/components/home/ValueProps";
-import { FeaturedProperties } from "@/components/home/FeaturedProperties";
-import { HowItWorks } from "@/components/home/HowItWorks";
-import { AboutStrip } from "@/components/home/AboutStrip";
-import { CTASection } from "@/components/home/CTASection";
+import { ComingSoon } from "@/components/ComingSoon";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -15,14 +11,5 @@ interface Props {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return (
-    <>
-      <Hero />
-      <ValueProps />
-      <FeaturedProperties />
-      <HowItWorks />
-      <AboutStrip />
-      <CTASection />
-    </>
-  );
+  return <ComingSoon />;
 }

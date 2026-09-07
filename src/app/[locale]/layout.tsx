@@ -5,9 +5,11 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { WhatsAppFAB } from "@/components/layout/WhatsAppFAB";
+// Coming Soon mode: Header/Footer/WhatsAppFAB imports intentionally left in place but unused,
+// so relaunching the real site only requires reverting one commit (re-adds them below).
+// import { Header } from "@/components/layout/Header";
+// import { Footer } from "@/components/layout/Footer";
+// import { WhatsAppFAB } from "@/components/layout/WhatsAppFAB";
 import "../globals.css";
 
 const montserrat = Montserrat({
@@ -29,12 +31,11 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: {
-    default: "FindRE — Real Estate in Northern Riyadh",
-    template: "%s · FindRE",
-  },
+  // Coming Soon mode metadata — customers who share the link on WhatsApp/etc. see this preview.
+  // Revert this block along with page.tsx / layout body / middleware when relaunching.
+  title: "FindRE — قريباً · Coming Soon",
   description:
-    "Boutique real estate in Northern Riyadh. Curated properties, direct WhatsApp contact.",
+    "منصة عقارية بوتيك في شمال الرياض · Boutique real estate in Northern Riyadh — launching soon.",
   icons: { icon: "/brand/favicon.svg" },
 };
 
@@ -58,12 +59,11 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${montserrat.variable} ${tajawal.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-dvh flex flex-col bg-white" suppressHydrationWarning>
+      <body className="min-h-dvh bg-white" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <WhatsAppFAB />
+          {/* Coming Soon mode: Header/Footer/WhatsAppFAB removed so the landing renders full-viewport.
+              Revert this commit to restore the real site chrome. */}
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
