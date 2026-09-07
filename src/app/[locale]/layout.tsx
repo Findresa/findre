@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   // Revert this block along with page.tsx / layout body / middleware when relaunching.
   title: "FindRE — قريباً · Coming Soon",
   description:
-    "منصة عقارية بوتيك في شمال الرياض · Boutique real estate in Northern Riyadh — launching soon.",
+    "منصة عقارية في الرياض · Real estate in Riyadh — launching soon.",
   icons: { icon: "/brand/favicon.svg" },
 };
 

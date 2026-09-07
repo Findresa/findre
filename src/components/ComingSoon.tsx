@@ -26,15 +26,15 @@ export function ComingSoon() {
         textAlign: "center",
       }}
     >
-      {/* Logo */}
-      <div style={{ marginBottom: 32 }}>
+      {/* Logo — wrapped in a flex container so it's explicitly centered regardless of the SVG's own alignment. */}
+      <div style={{ marginBottom: 32, display: "flex", justifyContent: "center", width: "100%" }}>
         <Image
           src="/brand/logo-primary.svg"
           alt="FindRE"
           width={180}
           height={72}
           priority
-          style={{ height: "auto", filter: "brightness(1.05)" }}
+          style={{ height: "auto", display: "block", filter: "brightness(1.05)" }}
         />
       </div>
 
@@ -87,7 +87,7 @@ export function ComingSoon() {
           margin: "0 0 8px 0",
         }}
       >
-        منصة عقارية بوتيك في شمال الرياض
+        منصة عقارية في الرياض
       </p>
       <p
         style={{
@@ -99,7 +99,7 @@ export function ComingSoon() {
           direction: "ltr",
         }}
       >
-        Boutique real estate · Northern Riyadh
+        Real estate · Riyadh
       </p>
 
       {/* WhatsApp CTA */}
